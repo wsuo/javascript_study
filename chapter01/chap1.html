@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定时打开窗口</title>
+  <script>
+    function openWindow() {
+      window.open(
+        "",
+        "窗口",
+        "toolbars = 0,scrollbars = 0, location = 0, statusbars = 0, menubars = 0, resizable = 0, width = 640, height = 480"
+      );
+    }
+  </script>
+</head>
+<body onload="setInterval('openWindow()', 1000);">
+  <h2>窗口</h2>
+</body>
+</html>
