@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <script>
+    function getResult() {
+      var objRadio = document.form1.jobView;
+      for (var i = 0; i < objRadio.length; i++) {
+        if (objRadio[i].checked) {
+          myView = objRadio[i].value;
+          alert("你的评价是: " + myView);
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <form id="from1" method="POST" action="regInfo.aspx" name="form1">
+    <p>
+      <input type="radio" name="jobView" id="most" value="非常满意">
+      <label for="most">非常满意</label>
+    </p>
+    <p>
+      <input type="radio" name="jobView" id="more" value="比较满意">
+      <label for="more">比较满意</label>
+    </p>
+    <p>
+      <input type="radio" name="jobView" id="not" value="不满意">
+      <label for="not">不满意</label>
+    </p>
+    <p>
+      <input type="radio" name="jobView" id="badly" value="非常不满意">
+      <label for="badly">非常不满意</label>
+    </p>
+    <p>
+      <input type="button" name="btn" value="查看评价结果" onclick="getResult();">
+    </p>
+  </form>
+</body>
+
+</html>

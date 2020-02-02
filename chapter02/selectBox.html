@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>下拉菜单</title>
+  <style>
+    form {
+      padding: 0px;
+      margin: 0px;
+      font: 14px Arial;
+    }
+  </style>
+  <script>
+    function checkSingle(params) {
+      var form = document.forms["form1"];
+      var selectBox = form.selectBox;
+      var iChoice = selectBox.selectedIndex;
+      alert("您选中了" + selectBox.options[iChoice].text);
+    }
+    function checkMultiple(params) {
+      var form = document.forms["form2"];
+      var selectBox = form.selectBox;
+      var aChoice = new Array();
+      //遍历整个下拉菜单
+      for (var i = 0; i < selectBox.options.length; i++) {
+        if (selectBox.options[i].selected) {
+          aChoice.push(selectBox.options[i].text);//压入到数组中
+          alert("您选了" + aChoice.join());//输出结果
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <form id="form1" name="form1" method="POST">
+    <label for="selectBox">请选择您的星座</label>
+    <p>
+      <select id="selectBox" name="selectBox">
+        <option value="Aries" selected="selected">白羊座</option>
+        <option value="Taurus" selected="selected">金牛座</option>
+        <option value="Gemini" selected="selected">双子座</option>
+        <option value="Leo" selected="selected">狮子座</option>
+        <option value="Virgo" selected="selected">处女座</option>
+      </select>
+    </p>
+    <p>
+      <input type="button" onclick="checkSingle();" value="查看结果">
+    </p>
+  </form>
+</body>
+</html>
